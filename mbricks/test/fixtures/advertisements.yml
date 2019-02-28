@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Name: MyString
+  Area: MyString
+  Type: MyString
+  Size: 1.5
+  Description: MyString
+  Rates: MyString
+  Price: 1.5
+  Ad_Validity: 2019-02-26
+  User_ID: 
+  Image_id: 
+
+two:
+  Name: MyString
+  Area: MyString
+  Type: MyString
+  Size: 1.5
+  Description: MyString
+  Rates: MyString
+  Price: 1.5
+  Ad_Validity: 2019-02-26
+  User_ID: 
+  Image_id: 

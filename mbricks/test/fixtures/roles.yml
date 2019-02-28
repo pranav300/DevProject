@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Role_Type: MyString
+  Role_Description: MyString
+  Role_Validity: 2019-02-26
+
+two:
+  Role_Type: MyString
+  Role_Description: MyString
+  Role_Validity: 2019-02-26

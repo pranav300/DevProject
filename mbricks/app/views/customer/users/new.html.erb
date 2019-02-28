@@ -1,0 +1,35 @@
+<% provide(:title, 'Sign up') %>
+<head>
+    <title>Heading Example</title>   
+    <div class="topnav">
+        <a><%= link_to 'MBRICK.COM',welcome_index_path %>
+        <div class="topnav-right">
+        <a> <%= link_to 'Signup',register_path %></a>
+        <a><%= link_to 'Login',login_path %></a>
+        </div>
+    </div>
+</head>
+<body>
+<h1>Sign up</h1>
+
+<div align="center">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for :user do |f| %>
+      <%= f.label :Name%>
+      <%= f.text_field :name %><br><br>
+
+      <%= f.label :Email %>
+      <%= f.email_field :email %><br><br>
+      <%= f.label :contact_Number%>
+      <%= f.text_field :contact_number%><br><br>
+
+      <%= f.label :Password %>
+      <%= f.password_field :password %><br><br>
+      <%= f.label :Password_Confirmation %>
+      <%= f.password_field :password_confirmation %><br><br>
+      <%= f.submit%><br>
+      <%= link_to 'Already have a Account? Click Here to SignIn', login_path%>
+    <% end %>
+  </div>
+</div>
+</body>
