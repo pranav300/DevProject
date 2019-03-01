@@ -7,6 +7,8 @@ namespace :customer do
   end
   get 'register' => 'customer/users#new'  
   post 'register' => 'customer/users#create'
+ 
+  post 'pay' => 'customer/sessions#pay'
   get 'login' => 'customer/sessions#new'
   post 'login' => 'customer/sessions#create'
   get 'logout' => 'customer/sessions#destroy'
