@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_28_054407) do
+ActiveRecord::Schema.define(version: 2019_03_01_050246) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password"
+    t.string "contact_number"
+    t.string "password_digest"
     t.string "role", default: "User"
-    t.date "role_type"
+    t.string "role_type", default: "Unpaid"
+    t.string "validity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "validity"
-    t.string "password_confirmation"
-    t.string "contact_number", limit: 10
+    t.index ["contact_number"], name: "index_users_on_contact_number", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

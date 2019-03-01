@@ -7,10 +7,10 @@ namespace :customer do
   end
   get 'register' => 'customer/users#new'  
   post 'register' => 'customer/users#create'
-  
   get 'login' => 'customer/sessions#new'
-  post 'login' => 'customer/session#create'
-  get 'logout' => 'customer/session#destroy'
+  post 'login' => 'customer/sessions#create'
+  get 'logout' => 'customer/sessions#destroy'
+  get 'users_show' => 'customer/users#show'
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

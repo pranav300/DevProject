@@ -9,6 +9,19 @@ class Customer::UsersController < ApplicationController
           format.json {render :json => @user}
         end
     end
+
+    def authenticate(sessions)
+        if self.password == @sessions.password
+            return true
+        else
+            return false
+        end
+
+    end
+
+    def show
+    end
+
     def create
         
         @user = User.new(article_params)
@@ -21,6 +34,7 @@ class Customer::UsersController < ApplicationController
     end
     private
     def article_params
-        params.require(:user).permit(:name,:email,:contact_number,:password,:password_confirmation,:validity)
+        params.require(:user).permit(:name,:email,:contact_number,:password,:validity, :password_confirmation)
+
     end
 end
