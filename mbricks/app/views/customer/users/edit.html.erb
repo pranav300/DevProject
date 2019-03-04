@@ -1,0 +1,30 @@
+<head>
+  <title>Heading Example</title>
+  <div class="topnav">
+    <a><%= link_to 'MBRICK.COM',welcome_index_path %></a>
+    <div class="topnav-right">
+      <a><%= link_to "Pay", pay_path%></a>
+      <a><%= link_to "logout", logout_path %></a>
+    </div>
+  </div>
+</head>
+<body>
+<%= form_for @user,:url =>{:controller => 'users', :action => 'update'}, local: true do |form| %>
+  <p>
+    <%= form.label :Name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :Contact_Number %><br>
+    <%= form.text_area :contact_number %>
+  </p>
+  <p>
+    <%= form.label :Email %><br>
+    <%= form.text_area :email %>
+  </p>
+  <p>
+    <%= form.submit  %>
+  </p>
+<%end %>
+  </body>

@@ -12,6 +12,7 @@
     <tr>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
+      <td><%= link_to 'Show', showuser_path(user) %>
     </tr>
   <% end %>
 </table>

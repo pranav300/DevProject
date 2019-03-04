@@ -1,8 +1,9 @@
 <head>
     <title>Heading Example</title>   
     <div class="topnav">
-        <a><%= link_to 'MBRICK.COM',welcome_index_path %>
+      <a><%= link_to 'MBRICK.COM',welcome_index_path %></a>
         <div class="topnav-right">
+          <a><%= link_to "Edit", edit_customer_user_path(session[:usersid])%></a>
         <a><%= link_to "Pay", pay_path%></a>
         <a><%= link_to "logout", logout_path %></a>
         </div>

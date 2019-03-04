@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/index'
 namespace :customer do
-    resources :users, only: [:create]
+    resources :users, only: [:create,:edit, :update]
     resource :session, only: [:create]
     resource :confirmation, only: [:new]
   end
@@ -15,6 +15,7 @@ namespace :customer do
   get 'logout' => 'customer/session#destroy'
   get 'users_show' => 'customer/users#show'
   post 'admin_index' => 'admin#index'
+  get 'showuser/:id' => 'admin#showuser'
   get 'admin' => 'admin#new'
   post 'admin' => 'admin#create'
   root 'welcome#index'

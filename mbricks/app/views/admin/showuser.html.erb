@@ -1,0 +1,38 @@
+<head>
+  <% provide(:title, 'Sign up') %>
+  <div class="topnav">
+    <a><%= link_to 'MBRICK.COM', admin_path %></a>
+    <div class="topnav-right">
+      <a><%= link_to 'Logout', welcome_index_path %></a>
+    </div>
+  </div>
+</head>
+<body>
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<p>
+  <strong>Contact No:</strong>
+  <%= @user.contact_number %>
+</p>
+<p>
+  <strong>Role:</strong>
+  <%= @user.role %>
+</p>
+
+<p>
+  <strong>Role Type:</strong>
+  <%= @user.role_type %>
+</p>
+
+<p>
+  <strong>Validity:</strong>
+  <%= @user.validity %>
+</p>
+</body>
