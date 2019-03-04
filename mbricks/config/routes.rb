@@ -7,11 +7,11 @@ namespace :customer do
   end
   get 'register' => 'customer/users#new'  
   post 'register' => 'customer/users#create'
- 
-  post 'pay' => 'customer/sessions#pay'
-  get 'login' => 'customer/sessions#new'
-  post 'login' => 'customer/sessions#create'
-  get 'logout' => 'customer/sessions#destroy'
+  get 'pay' => 'customer/session#pay' 
+ # post 'pay' => 'customer/sessions#pay'
+  get 'login' => 'customer/session#new'
+  post 'login' => 'customer/session#create'
+  get 'logout' => 'customer/session#destroy'
   get 'users_show' => 'customer/users#show'
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
