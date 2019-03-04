@@ -1,12 +1,17 @@
 class Customer::SessionController < ApplicationController
     def new
+        
     end
     def create
         @user = User.find_by_email(params[:session][:email])
         if @user && @user.authenticate(params[:session][:password])
             log_in(@user)
-            flash[:notice] = "Logged in"
-            render plain: "Hello,#{session[:user_id]}!"
+            if @user.role == "Admin"
+                redirect_to admin_path
+            else
+                flash[:notice] = "Logged in"
+                redirect_to users_show_url
+            end
         else
             flash[:danger] = 'Invalid email/password combination'
             render 'new'
@@ -14,7 +19,7 @@ class Customer::SessionController < ApplicationController
     end
     def pay
         @user=User.new
-        if @user = User.find_by(session[:user])
+        if @user = User.find_by_id(session[:usersid])
             @time=Time.now + 30*24*3600
             @user.validity=@time
             @user.role_type="Paid"
@@ -24,7 +29,7 @@ class Customer::SessionController < ApplicationController
        end
     end
     def destroy
-        session[:user] =nil
+        session[:userid] =nil
         flash[:notice]= "Logged Out"
         redirect_to login_path
     end
